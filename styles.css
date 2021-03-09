@@ -1,0 +1,73 @@
+html{
+    background: url('background.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    
+}
+/*nav bar*/
+nav{
+    width: 98%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 20px;
+    font-size: 6rem;
+    margin: auto;
+    font-weight: 800;
+}
+
+.profile{
+    border-radius: 50%;
+}
+.navItem{
+    height: 75px;
+    width: auto;
+    border: white 3px solid;
+}
+/* main page*/
+
+.titleContainer{
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-top: 2%;
+    background-color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border: white 3px solid;
+    border-radius: 40%;
+}
+.mainTitle{
+    font-size: 4em;
+    font-weight: 700;
+}
+.secondTitle{
+    margin-top: 2%;
+    font-size: 2em;
+
+}
+.bigContainer{
+    display: flex;
+    justify-content: center;
+}
+.optionContainer{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3em;
+}
+.options{
+    height: 20em;
+}
+button{
+    border: black 4px solid;
+    border-radius: 10%;
+}
+button:hover{
+    transform: scale(1.1);
+    
+}
+

@@ -27,7 +27,7 @@ nav{
     border: white 3px solid;
 }
 /* main page*/
-
+/*Title*/
 .titleContainer{
     padding-top: 2%;
     padding-bottom: 1%;
@@ -49,6 +49,7 @@ nav{
     font-size: 2em;
 
 }
+/*options*/
 .bigContainer{
     display: flex;
     justify-content: center;
@@ -68,6 +69,27 @@ button{
 }
 button:hover{
     transform: scale(1.1);
-    
+}
+/*scoreBoard*/
+.scoreContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    font-weight: 800;
+}
+.score{
+    margin-top: 5%;
+    background-color: black;
+    height: 7rem;
+    width: 45%;
+    border-radius: 1em;
+    border:white 3px solid;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 

@@ -71,10 +71,26 @@ button:hover{
     transform: scale(1.1);
 }
 /*scoreBoard*/
+.roundScore{
+    background-color: white;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    width: 30%;
+    height: 70px;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75em;
+    position: relative;
+}
+
 .scoreContainer{
     display: flex;
     justify-content: space-between;
-    margin-top: 3%;
+    margin-top: 1%;
     width: 60%;
     margin-left: auto;
     margin-right: auto;

@@ -1,8 +1,19 @@
 let options=document.querySelectorAll(".options");
+const textAfterRound= document.querySelector('.textAfterRound');
+const yourScore= document.querySelector('.youScore');
+const machineScore= document.querySelector('.machineScore');
+let playerScore=0;
+let computerScore=0;
 
+function restartGame(){
+    playerScore=0;
+    computerScore=0;
+    textAfterRound.textContent=''
+    machineScore.textContent=computerScore;
+    yourScore.textContent=playerScore;
+}
 //this function inputs person choice
 options.forEach((options)=>{
-    console.log("hey"+options)
     options.addEventListener("click", (e)=>{
         //console.log(e)
         playerSelection=options.alt.toLowerCase();
@@ -19,64 +30,67 @@ let computerSelection = ()=>{
 }
 //Returns the winner
 function singleRound(playerSelection, computerSelection){
-    console.log(playerSelection+ " " + computerSelection)
-    console.log("i'm in single Round")
+    //console.log(playerSelection+ " " + computerSelection)
+    //console.log("i'm in single Round")
     if(playerSelection==computerSelection){ 
-        //console.log('Tie')
-        return `It is a Tie! Both selected ${computerSelection}`;
+        textAfterRound.textContent= 'it \'s a tie, you can do it!';
+        return;
     }else if(playerSelection=='rock'){
            //console.log('P rock')
         if (computerSelection=='paper'){
             //console.log('C paper')
-            return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+            computerWins();
+            return;
         }else if(computerSelection=='scissors'){
            //console.log('C scissors')
-            return `You Win! ${playerSelection} beats ${computerSelection}.`;
+           playerWins();
+           return;
         }
     }else if(playerSelection=='paper'){
         //console.log('P paper')
         if (computerSelection=='scissors'){
             //console.log('C scissors')
-            return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+            computerWins();
+            return;
         }else if(computerSelection=='rock'){
             //console.log('C rock')
-            return `You Win! ${playerSelection} beats ${computerSelection}.`;
+            playerWins()
+            return;
         }
     }else if(playerSelection=='scissors'){
             //console.log('P scissors')
             if (computerSelection=='rock'){
             //console.log('C rock')
-            return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+            computerWins();
+            return;
         }else if(computerSelection=='paper'){
-            function computerPlay(){
-                let random= Math.floor(Math.random()*3);
-                let arr= ['paper', 'scissors', 'rock'];
-                return arr[random];
-            }       }
+            //consoile.log('Cpaper')
+            playerWins();
+            return;
+      }
     }
+
 }
+function playerWins(){
+    playerScore++
+    textAfterRound.textContent= 'You win the round, do it again!';
+    yourScore.textContent=playerScore;
+    checkScore();
+}
+function computerWins(){
+    computerScore++
+    textAfterRound.textContent= 'You lose the round, please FOCUS!!';
+    machineScore.textContent=computerScore;
 
-
-function game(playerInput){
-    let computerCount=0
-    let playerCount=0
-    
-        const result= singleRound(playerInput);
-        console.log(result);
-        alert(result);
-        let decider=result[4];
-        if(decider== 'W'){
-            playerCount++;
-        }else if(decider== 'L'){
-            computerCount++;
-        }
-    
-    if(computerCount>playerCount){
-        console.log('computer Win:'+computerCount+" to "+playerCount);
-    }else if(computerCount<playerCount){
-        console.log('Player Wins: '+playerCount+ " to "+computerCount);
-        return 'Player wins'
-    }else{
-        return "it's a tie. Player: "+playerCount+ ". Computer:"+computerCount+".";
+    checkScore();
+}
+function checkScore(){
+    if(playerScore==5){
+        alert('you win')
+        restartGame();
+    }
+    if(computerScore==5){
+        alert('Computer Wins')
+        restartGame();
     }
 }
